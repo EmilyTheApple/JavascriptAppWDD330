@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Source+Sans+Pro&display=swap');
+
+body {
+    margin: 0;
+    background-image: url("/images/Rectangular\ Tiles\ D.jpg");
+    color: 2C1320;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header {
+    background-color: #2c1320;
+    height: 75px;
+    padding-top: 30px;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    color: #D9D0DC;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+main {
+
+}
+
+.roll {
+    margin: 30% auto;
+    display: block;
+    padding: 10px 50px;
+    background-color: #CED1DF;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1rem;
+    border-color: #56667A;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #2c1320;
+    width: 100%;
+    padding-left: 10%;
+    color: #D9D0DC;
+}
