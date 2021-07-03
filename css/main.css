@@ -21,7 +21,7 @@ h1 {
 }
 
 main {
-
+    margin: 20px;
 }
 
 .roll {
@@ -42,4 +42,23 @@ footer {
     width: 100%;
     padding-left: 10%;
     color: #D9D0DC;
+}
+
+#character {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #ced1dfa4;
+    padding: 5px;
+}
+
+.character, h2 {
+    margin: 0 0 15px 0;
+}
+
+.character {
+    padding-top: 4px;
+}
+
+h2 {
+    font-size: larger;
 }

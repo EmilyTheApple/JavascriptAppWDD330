@@ -1,6 +1,5 @@
 let character = document.getElementById("character")
 const raceUrl = 'https://www.dnd5eapi.co/api/races'
-const subraceUrl = 'https://www.dnd5eapi.co/api/subraces' //NEEDS MORE LOGIC
 const classUrl = 'https://www.dnd5eapi.co/api/classes'
 const backgroundUrl = 'https://www.dnd5eapi.co/api/backgrounds' //NOPE
 const skillsUrl = 'https://www.dnd5eapi.co/api/skills'
@@ -11,7 +10,6 @@ const languagesUrl = 'https://www.dnd5eapi.co/api/languages'
 const alignmentUrl = 'https://www.dnd5eapi.co/api/alignments'
 
 rollChar(raceUrl, displayRace)
-rollChar(subraceUrl, displaySubrace)
 rollChar(classUrl, displayClass)
 rollChar(backgroundUrl, displayBackground)
 rollChar(skillsUrl, displaySkills)
@@ -34,12 +32,6 @@ function displayRace(data) {
     const name = data.results[random(data.count)].name
     console.log(data.results)
     character.innerHTML += `<h2>Race:</h2><p class="character">${name}</p>`
-}
-
-function displaySubrace(data) {
-    const name = data.results[random(data.count)].name
-    console.log(data.results)
-    character.innerHTML += `<h2>Subrace:</h2><p class="character">${name}</p>`
 }
 
 function displayClass(data) {
