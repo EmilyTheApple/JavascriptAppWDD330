@@ -62,3 +62,7 @@ footer {
 h2 {
     font-size: larger;
 }
+
+form {
+    display: none;
+}
