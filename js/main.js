@@ -101,6 +101,9 @@ function save() {
 
 const saveButton = document.getElementById('saveBtn')
 
-saveButton.adddEventListener('click', () => {
-    preventDefault()
+saveButton.addEventListener('click', (event) => {
+    event.preventDefault()
+    let charName = document.getElementById('charName')
+    localStorage.setItem(charName.value, JSON.stringify(keepCharacter))
+    window.location.href = '/charList.html'
 })
