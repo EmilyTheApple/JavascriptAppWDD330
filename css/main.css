@@ -3,7 +3,7 @@
 body {
     margin: 0;
     background-image: url("/images/Rectangular\ Tiles\ D.jpg");
-    color: 2C1320;
+    color: #2C1320;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -16,12 +16,15 @@ header {
 h1 {
     margin: 0;
     text-align: center;
-    color: #D9D0DC;
     font-family: 'Cinzel Decorative', serif;
 }
 
+.heading {
+    color: #D9D0DC;
+}
+
 main {
-    margin: 20px;
+    margin: 15px;
 }
 
 .roll {
@@ -61,8 +64,45 @@ footer {
 
 h2 {
     font-size: larger;
+    text-align: center;
 }
 
 form {
     display: none;
+}
+
+.charList {
+    display: flex;
+    background-color: lightgrey;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 5px;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+
+.charList:hover {
+    background-color: grey;
+}
+
+p {
+    font-size: .9rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mainList {
+    display: flex;
+    background-color: #CED1DF;
+    padding: 20px 10px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.charList span {
+    color: #4b2036;
+    font-style: italic;
 }

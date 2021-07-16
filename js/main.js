@@ -11,15 +11,18 @@ const proficienciesUrl = 'https://www.dnd5eapi.co/api/proficiencies'
 const languageUrl = 'https://www.dnd5eapi.co/api/languages' 
 const alignmentUrl = 'https://www.dnd5eapi.co/api/alignments'
 
-rollChar(raceUrl, displayRace)
-rollChar(classUrl, displayClass)
-rollChar(backgroundUrl, displayBackground)
-rollChar(skillsUrl, displaySkills)
-rollChar(weaponUrl, displayWeapon)
-rollChar(featuresUrl, displayFeature)
-rollChar(proficienciesUrl, displayProficiencies)
-rollChar(languageUrl, displayLanguage)
-rollChar(alignmentUrl, displayAlignments)
+function rollCharCall() {
+    rollChar(raceUrl, displayRace)
+    rollChar(classUrl, displayClass)
+    rollChar(backgroundUrl, displayBackground)
+    rollChar(skillsUrl, displaySkills)
+    rollChar(weaponUrl, displayWeapon)
+    rollChar(featuresUrl, displayFeature)
+    rollChar(proficienciesUrl, displayProficiencies)
+    rollChar(languageUrl, displayLanguage)
+    rollChar(alignmentUrl, displayAlignments)
+}
+
 
 function rollChar(url, displayData) {
     fetch(url)
@@ -40,7 +43,7 @@ function displayRace(data) {
 function displayClass(data) {
     const name = data.results[random(data.count)].name
     character.innerHTML += `<h2>Class:</h2><p id="class" class="character">${name}</p>`
-    keepCharacter.class = `${name}`
+    keepCharacter.classs = `${name}`
 }
 
 function displayBackground(data) {
@@ -83,7 +86,7 @@ function displayLanguage(data) {
 function displayAlignments(data) {
     const name = data.results[random(data.count)].name
     character.innerHTML += `<h2>Alignment:</h2><p id="alignment" class="character">${name}</p>`
-    keepCharacter.race = `${name}`
+    keepCharacter.alignment = `${name}`
 }
 
 function random(max) {
@@ -107,3 +110,29 @@ saveButton.addEventListener('click', (event) => {
     localStorage.setItem(charName.value, JSON.stringify(keepCharacter))
     window.location.href = '/charList.html'
 })
+
+function getCharList() {   
+    Object.keys(localStorage).forEach(function(key){
+        let display = document.getElementById('charListDiv')
+        console.log(localStorage.getItem(key));
+
+        let keyObject = JSON.parse(localStorage.getItem(key))
+        display.innerHTML += `<div class="charList" id="char${key}"><p>Character Name: <span>${key}</span></p><p>Race: <span>${keyObject.race}</span></p><p>Class: <span>${keyObject.classs}</span></p></div>`
+
+        let event = document.getElementById(`char${key}`)
+        console.log(`char${key}`)
+        // event.addEventListener('click', (event) => {
+        //     window.location.href = '/charDetail.html'
+        //     let details = document.getElementById('charDetails')
+        //     details += `<h2>Race:</h2><p id="race" class="character">keyObject${race}</p>
+        //     <h2>Class:</h2><p id="class" class="character">keyObject${classs}</p>
+        //     <h2>Background:</h2><p id="background" class="character">keyObject${background}</p>
+        //     <h2>Skill:</h2><p id="skill" class="character">keyObject${skills}</p>
+        //     <h2>Weapon:</h2><p id="weapon" class="character">keyObject${weapon}</p>
+        //     <h2>Feature:</h2><p id="feature" class="character">keyObject${feature}</p>
+        //     <h2>Proficiency:</h2><p id="proficiency" class="character">keyObject${proficiency}</p>
+        //     <h2>Language:</h2><p id="language" class="character">keyObject${language}</p>
+        //     <h2>Alignment:</h2><p id="alignment" class="character">keyObject${alignment}</p>`
+        // })
+     });
+}
